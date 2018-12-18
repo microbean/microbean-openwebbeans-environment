@@ -36,7 +36,7 @@
       <dependency>
         <groupId>org.microbean</groupId>
         <artifactId>microbean-abstract-environment</artifactId>
-        <version>0.5.1</version>
+        <version>0.5.2</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -116,6 +116,11 @@
 
     <pluginManagement>
       <plugins>
+
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
         
         <plugin>
           <groupId>io.fabric8</groupId>
@@ -147,7 +152,7 @@
             <image>
               <name>microbean/microbean-openwebbeans:%l</name>
               <build>
-                <from>docker.io/microbean/microbean-base:0.5.1</from>
+                <from>docker.io/microbean/microbean-base:0.5.2</from>
                 <assembly>
                   <targetDir>/microbean</targetDir>
                   <inline>
@@ -216,12 +221,4 @@
     </plugins>
   </build>
 
-  <properties>
-
-    <!-- maven-release-plugin properties -->
-    <goals>deploy,site-deploy</goals>
-    <scmCommentPrefix>[maven-release-plugin] [skip ci]</scmCommentPrefix>
-    
-  </properties>
-  
 </project>
